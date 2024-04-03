@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LivreurController;
 use App\Http\Controllers\PersonnelRestaurantController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\Utilisteur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,7 @@ Route::group([
 
 // Route public
 Route::post('inscription_liveur', [LivreurController::class, 'store']);
+Route::post('inscription_user', [Utilisteur::class, 'store']);
 
 
 

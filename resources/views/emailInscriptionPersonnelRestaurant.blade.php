@@ -62,16 +62,10 @@
                 <div class="col-md-6">
                     
                     <!-- Remplacer src par le chemin de l'image -->
-                    <img src="https://ibb.co/nPTk598" class="img-fluid rounded-start" alt="restaurant">
-                </div>
-                <div class="col-md-6 colAuth rounded-end">
-                    <div class="card-body"> 
+                    <img src="https://i.ibb.co/PGhNnGp/Fast-food-restaurant-logo-restaurant-logo-Fait-avec-Poster-My-Wall.jpg" alt="Fast-food-restaurant-logo-restaurant-logo-Fait-avec-Poster-My-Wall"width="150" height="150"> <div class="card-body"> 
                         <h3 class="card-title text-center">INSCRIPTION AU PLATEFORME, TERANGA FOOD</h3>
                         <div class="text-center">
-                            <img src="https://ibb.co/nPTk598" alt="Logo Restaurant, Teranga Foot" class="logo">
-                        </div>
-                            <div>
-                                <p class="fs-5 mt-4">Bonjour {{ $nom }} ,</p>
+                      <!-- <img src="https://i.ibb.co/PGhNnGp/Fast-food-restaurant-logo-restaurant-logo-Fait-avec-Poster-My-Wall.jpg" alt="Fast-food-restaurant-logo-restaurant-logo-Fait-avec-Poster-My-Wall"width="100" height="100"> --> <p class="fs-5 mt-4">Bonjour {{ $nom }} ,</p>
                                 <p class="fs-5 mt-4"><strong>Voici vos identifiants de connexion :</strong></p>
                                 <p class="fs-5 mt-4">Email : <strong>{{ $email }}</strong></p>
                                 <p class="fs-5 mt-4">Mot de passe : <strong>{{ $password }}</strong></p>
@@ -79,7 +73,7 @@
                             </div>
                         <div class="text-center">
                             <p class="fs-5 mt-4">Utilisez vos informations pour vous connecter à notre site.</p>
-                            <a href="http://localhost:4200/login" style="color: white">Login</a>
+                           <p> <a href="http://localhost:4200/login" style="color: white"> Login </a> </p>
                         </div>
                     </div>
                 </div>
