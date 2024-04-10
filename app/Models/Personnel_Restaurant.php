@@ -9,6 +9,8 @@ class Personnel_Restaurant extends Model
 {
     use HasFactory;
 
+    protected $table = 'personnel_restaurants'; // Définir le nom de la table
+    
     protected $fillable = [
         'poste_occupe',
     ];

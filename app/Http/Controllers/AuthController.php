@@ -27,7 +27,7 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => 'Non autorisé'], 401);
         }
 
         return $this->respondWithToken($token);
@@ -40,8 +40,22 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+        $user = auth()->user();
+    
+        // Charger les informations sur le rôle de l'utilisateur s'il existe
+        $role = $user->role ? $user->role->nom_role : null;
+    
+        // Charger les informations sur le poste occupé de l'utilisateur s'il existe
+        $poste_occupe = $user->personnelRestaurant ? $user->personnelRestaurant->poste_occupe : null;
+    
+        // Retourner les informations de l'utilisateur avec le rôle et le poste occupé
+        return response()->json([
+            'Les informations de l\'utilisateur' => $user,
+            'role' => $role,
+            'poste_occupe' => $poste_occupe,
+        ]);
     }
+    
 
     /**
      * Log the user out (Invalidate the token).
@@ -52,7 +66,7 @@ class AuthController extends Controller
     {
         auth()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(['message' => 'Déconnexion réussie']);
     }
 
     /**
@@ -77,7 +91,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 120
         ]);
     }
 }

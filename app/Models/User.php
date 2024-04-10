@@ -62,6 +62,11 @@ class User extends Authenticatable implements JWTSubject
    }
 
 
+//    public function hasRole(string $nom_role): bool
+//     {
+//         return $this->roles()->where('nom_role', $nom_role)->exists();
+//     }
+
     public function role()
     {
         return $this->belongsTo(Role::class);

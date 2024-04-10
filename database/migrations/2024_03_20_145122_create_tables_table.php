@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero');
+            $table->integer('numero')->unique();
             $table->string('nombre_place');
             $table->enum('disponibilte',['disponible','non_disponible'])->default('disponible');
 
             $table->unsignedBigInteger('personnel_restaurant_id');
-            $table->foreign('personnel_restaurant_id')->references('id')->on('personnel__restaurants')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('personnel_restaurant_id')->references('id')->on('personnel_restaurants')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('nom_article');
             $table->string('description_article');
             $table->integer('prix_article');
-            $table->string('image_article');
+            $table->string('image');
 
             $table->unsignedBigInteger('personnel_restaurant_id');
-            $table->foreign('personnel_restaurant_id')->references('id')->on('personnel__restaurants')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('personnel_restaurant_id')->references('id')->on('personnel_restaurants')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

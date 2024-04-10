@@ -13,6 +13,7 @@ class Table extends Model
         'numero',
         'nombre_place',
         'disponibilte',
+        'personnel_restaurant_id',
     ];
 
     public function personnelRestaurant()

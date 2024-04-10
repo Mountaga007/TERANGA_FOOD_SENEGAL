@@ -13,7 +13,8 @@ class Article extends Model
         'nom_article',
         'description_article',
         'prix_article',
-        'image_article',
+        'image',
+        'personnel_restaurant_id',
     ];
 
     public function commande()
